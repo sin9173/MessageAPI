@@ -22,7 +22,16 @@ public class Member {
     private String userPw; //회원 비밀번호
 
     @OneToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "point_id")
     private MemberPoint memberPoint;
 
+    public Member() {
+
+    }
+
+    public Member(String userId, String userPw, MemberPoint memberPoint) {
+        this.userId = userId;
+        this.userPw = userPw;
+        this.memberPoint = memberPoint;
+    }
 }

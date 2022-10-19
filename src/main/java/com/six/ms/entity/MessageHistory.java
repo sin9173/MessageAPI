@@ -3,6 +3,7 @@ package com.six.ms.entity;
 import lombok.Getter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -23,7 +24,7 @@ public class MessageHistory {
     private Member member;
 
     @OneToMany
-    @JoinColumn(name = "id")
-    private MessageHistoryDetail detail;
+    @JoinColumn(name = "mid")
+    private List<MessageHistoryDetail> detail;
 
 }
