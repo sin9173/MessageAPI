@@ -1,6 +1,7 @@
 package com.six.ms.member;
 
 import com.six.ms.entity.Member;
+import com.six.ms.entity.MemberInfo;
 import com.six.ms.entity.MemberPoint;
 import com.six.ms.repository.MemberPointRepository;
 import com.six.ms.repository.MemberRepository;
@@ -26,9 +27,13 @@ public class MemberSaveTest {
         MemberPoint memberPoint = new MemberPoint();
         memberPoint.setPoint(0);
 
+        MemberInfo memberInfo = new MemberInfo();
+
         memberPointRepository.save(memberPoint);
 
-        Member member = new Member("aaa", "aaa", memberPoint);
+        memberInfo
+
+        Member member = new Member("aaa", "aaa", memberPoint, memberInfo);
 
         memberRepository.save(member);
 

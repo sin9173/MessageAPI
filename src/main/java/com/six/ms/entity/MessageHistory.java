@@ -3,6 +3,7 @@ package com.six.ms.entity;
 import lombok.Getter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -20,8 +21,15 @@ public class MessageHistory {
     private int sendCount; //전송 시도 횟수
 
     @ManyToOne
-    @JoinColumn(name = "member_id")
-    private Member member;
+    @JoinColumn(name = "sender_info_id")
+    private SenderInfo senderInfo;
+
+    @Column(name = "send_date")
+    private LocalDateTime sendDate;
+
+    @ManyToOne
+    @JoinColumn(name = "type_id")
+    private MessageType messageType;
 
     @OneToMany
     @JoinColumn(name = "mid")

@@ -3,6 +3,7 @@ package com.six.ms.entity;
 import lombok.Getter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -17,10 +18,13 @@ public class Payment {
     @JoinColumn(name = "member_id")
     private Member member;
 
-    private long payment;
+    private long amount;
 
     @Enumerated(EnumType.STRING)
     private PayType type;
+
+    @Column(name = "payment_date")
+    private LocalDateTime paymentDate;
 
 }
 

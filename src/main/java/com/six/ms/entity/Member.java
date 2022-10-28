@@ -25,11 +25,16 @@ public class Member {
     @JoinColumn(name = "point_id")
     private MemberPoint memberPoint;
 
+
+    @OneToOne
+    @JoinColumn(name = "member_info_id")
+    private MemberInfo memberInfo;
+
     public Member() {
 
     }
 
-    public Member(String userId, String userPw, MemberPoint memberPoint) {
+    public Member(String userId, String userPw, MemberPoint memberPoint, MemberInfo memberInfo) {
         this.userId = userId;
         this.userPw = userPw;
         this.memberPoint = memberPoint;

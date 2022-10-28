@@ -22,5 +22,8 @@ public class MessageHistoryDetail {
     @Column(name = "phone_no")
     private String phoneNo;
 
+    private String title;
+
     private String content;
+
 }
